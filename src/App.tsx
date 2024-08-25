@@ -1,25 +1,32 @@
 
-//import { useState } from 'react';
+import { useState } from 'react';
 import './App.css'
 import RegistrationForm from './components/RegistrationForm';
+//import RegistrationForm from './components/RegistrationForm';
 
 
 
-function App() {
+const App =() =>{
+  const [students, setStudents] = useState<string[]>([
+    "Alice",
+    "Bob",
+    "Charlie",
+  ]) ;
 
 
-
-  //const [enteredName ,setEnteredName] =useState("");
-  //useState read the piece of code and relaod the page 
- // const [firstName ] =useState("");
-  
 
   return (
     <div>
-    
+    <section>
+      <h3>Students</h3>
+      <ul>
+        {students.map((student,index) =>(
+        <li key ={index}>{student}</li>))}
+      </ul>
+    </section>
 
-    <RegistrationForm />
-    </div>
+   <RegistrationForm />
+   </div>
 
   
     
