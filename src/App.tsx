@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './App.css'
 import RegistrationForm from './components/RegistrationForm';
+import Person from './components/Person';
 //import RegistrationForm from './components/RegistrationForm';
 
 
@@ -26,6 +27,7 @@ const App =() =>{
     </section>
 
    <RegistrationForm />
+  
    </div>
 
   
