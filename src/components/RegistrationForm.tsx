@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import Student from "../models/students";
 import GRADE_LEVEL from "../constants/gradeLevels";
 
@@ -29,8 +29,14 @@ const RegistrationForm = ( ) => {
         grades: [],
     });
 
+    const onSubmitHanlder =(event:FormEvent<HTMLFormElement>) =>{
+        event.preventDefault();
+        alert(JSON.stringify(student,null,2));
+    }
+    
+
 return(
-        <form>
+        <form onSubmit = {onSubmitHanlder}>
            <h1>Registration Form</h1>
 
               <label>First Name</label> <br></br>
@@ -90,6 +96,8 @@ return(
                <option value ={gradeLevel.id} key ={index}>
                  {gradeLevel.name}</option>))}
   </select>
+
+  <button onClick ={() => onSubmitHanlder} type="submit"> Complete Form</button>
 
   
   </form>
