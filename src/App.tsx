@@ -9,38 +9,38 @@ import classes from './App.css';
 
 
 
-const App =() =>{
+const App = () => {
   const [students, setStudents] = useState<Student[]>([
-    
-  ]) ;
 
-  const addStudent =(student: Student): void  =>{
-    setStudents((prevState) => [...prevState ,student]);
+  ]);
+
+  const addStudent = (student: Student): void => {
+    setStudents((prevState) => [...prevState, student]);
   };
 
 
 
   return (
     <div>
-    <section>
-      <h3 >Students</h3>
-      <ul>
-        {students.map((student,index) =>(
-        <li key ={index}>{student.firstName} , {student.lastName},
-        {student.age}, {student.gradeLevel.name}
-         </li>))}
-      </ul>
-    </section>
+      <section>
+        <h3 >Students</h3>
+        <ul>
+          {students.map((student, index) => (
+            <li key={index}>{student.firstName} , {student.lastName},
+              {student.age}, {student.gradeLevel.name}
+            </li>))}
+        </ul>
+      </section>
 
-   <RegistrationForm
-   onFormSubmit={addStudent}
-   numberOfStudentRegistered={students.length} />
-   <Person />
-  
-   </div>
+      <RegistrationForm
+        onFormSubmit={addStudent}
+        numberOfStudentRegistered={students.length} />
+      <Person />
 
-  
-    
+    </div>
+
+
+
   );
 };
 
