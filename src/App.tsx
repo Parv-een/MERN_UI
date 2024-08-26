@@ -4,7 +4,8 @@ import './App.css'
 import RegistrationForm from './components/RegistrationForm';
 import Person from './components/Person';
 import Student from './models/students';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Col, Container, ListGroup, ListGroupItem, Row } from 'react-bootstrap';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 //import RegistrationForm from './components/RegistrationForm';
 
 
@@ -21,23 +22,35 @@ const App = () => {
 
 
   return (
-    <div>
-      <section>
-        <h3>Students</h3>
-        <ul>
-          {students.map((student, index) => (
-            <li key={index}>{student.firstName} , {student.lastName},
-              {student.age}, {student.gradeLevel.name}
-            </li>))}
-        </ul>
-      </section>
+    <Container>
+      <Row>
+        <Col>
 
-      <RegistrationForm
-        onFormSubmit={addStudent}
-        numberOfStudentRegistered={students.length} />
-      <Person />
+          <section>
+            <h3>Students</h3>
+            <ListGroup>
+              {students.map((student, index) => (
+                <ListGroupItem key={index}>{student.firstName} , {student.lastName},
+                  {student.age}, {student.gradeLevel.name}
+                </ListGroupItem>))}
+            </ListGroup>
+          </section>
+        </Col>
+        <Col>
+          <RegistrationForm
+            onFormSubmit={addStudent}
+            numberOfStudentRegistered={students.length} />
+          <br></br>
+          <Row><Person /></Row>
 
-    </div>
+
+        </Col>
+
+      </Row>
+
+
+
+    </Container>
 
 
 
