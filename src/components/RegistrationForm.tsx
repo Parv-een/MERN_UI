@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import Student from "../models/students";
 import GRADE_LEVEL from "../constants/gradeLevels";
+import { Button } from "react-bootstrap";
 
 interface RegistrationFormProps {
   numberOfStudentRegistered: number;
@@ -111,7 +112,7 @@ function RegistrationForm({ numberOfStudentRegistered,
               {gradeLevel.name}</option>))}
         </select>
 
-        <button onClick={() => onSubmitHanlder} type="submit"> Complete Form</button>
+        <Button className="btn btn-primary" onClick={() => onSubmitHanlder} type="submit"> Complete Form</Button>
 
 
       </form>

@@ -4,7 +4,7 @@ import './App.css'
 import RegistrationForm from './components/RegistrationForm';
 import Person from './components/Person';
 import Student from './models/students';
-import classes from './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 //import RegistrationForm from './components/RegistrationForm';
 
 
@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div>
       <section>
-        <h3 >Students</h3>
+        <h3>Students</h3>
         <ul>
           {students.map((student, index) => (
             <li key={index}>{student.firstName} , {student.lastName},
