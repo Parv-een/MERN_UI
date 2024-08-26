@@ -4,7 +4,7 @@ import GRADE_LEVEL from "../constants/gradeLevels";
 
 interface RegistrationFormProps {
   numberOfStudentRegistered: number;
-  onFormSubmit : (FormData :Student) => void;
+ onFormSubmit :(formData :Student) => void;
 }
 
 
@@ -21,6 +21,7 @@ interface RegistrationFormProps {
 //export default function RegistrationForm 
 function RegistrationForm ({numberOfStudentRegistered, 
   onFormSubmit,
+
 }: RegistrationFormProps ) {
 
 
@@ -38,11 +39,17 @@ function RegistrationForm ({numberOfStudentRegistered,
 
     const onSubmitHanlder =(event:FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
+        onFormSubmit(student);
         alert(JSON.stringify(student,null,2));
     }
     
 
 return(
+  <section>
+    <h3> Number of Students Registered</h3>
+    <span>
+      number of students registered: {numberOfStudentRegistered}
+    </span>
         <form onSubmit = {onSubmitHanlder}>
            <h1>Registration Form</h1>
 
@@ -108,6 +115,7 @@ return(
 
   
   </form>
+  </section>
     
    
    );

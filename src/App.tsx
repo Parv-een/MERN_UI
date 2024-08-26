@@ -4,6 +4,7 @@ import './App.css'
 import RegistrationForm from './components/RegistrationForm';
 import Person from './components/Person';
 import Student from './models/students';
+import classes from './App.css';
 //import RegistrationForm from './components/RegistrationForm';
 
 
@@ -13,7 +14,7 @@ const App =() =>{
     
   ]) ;
 
-  const addStudent =(student: Student) : void =>{
+  const addStudent =(student: Student): void  =>{
     setStudents((prevState) => [...prevState ,student]);
   };
 
@@ -22,10 +23,12 @@ const App =() =>{
   return (
     <div>
     <section>
-      <h3>Students</h3>
+      <h3 >Students</h3>
       <ul>
         {students.map((student,index) =>(
-        <li key ={index}>{student.firstName}</li>))}
+        <li key ={index}>{student.firstName} , {student.lastName},
+        {student.age}, {student.gradeLevel.name}
+         </li>))}
       </ul>
     </section>
 
