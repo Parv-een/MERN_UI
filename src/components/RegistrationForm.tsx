@@ -2,7 +2,10 @@ import { FormEvent, useState } from "react";
 import Student from "../models/students";
 import GRADE_LEVEL from "../constants/gradeLevels";
 
-
+interface RegistrationFormProps {
+  numberOfStudentRegistered: number;
+  onFormSubmit : (FormData :Student) => void;
+}
 
 
 // enum DaysOfTheWeek {
@@ -16,7 +19,11 @@ import GRADE_LEVEL from "../constants/gradeLevels";
 
 
 //export default function RegistrationForm 
-const RegistrationForm = ( ) => {
+function RegistrationForm ({numberOfStudentRegistered, 
+  onFormSubmit,
+}: RegistrationFormProps ) {
+
+
     
     const [student , setStudent] =useState<Student>({
         firstName:"",
