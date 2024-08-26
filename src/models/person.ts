@@ -1,4 +1,4 @@
-export default interface personName{
+export default interface PersonList{
     id:number,
     name:string,
     age:number,

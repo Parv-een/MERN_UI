@@ -27,6 +27,7 @@ const App =() =>{
     </section>
 
    <RegistrationForm />
+   <Person />
   
    </div>
 
